@@ -33,9 +33,7 @@ const Main = memo(({ page, balances, transaction, onNext, onSend }: Props) => (
     <Logo src="/Logo.svg" alt="Utrust" width="120" height="28" />
     {page === 'balances' && <BalancePage onNext={onNext} balances={balances} />}
     {page === 'send' && <SendPage onSend={onSend} />}
-    {page === 'success' && transaction && (
-      <SuccessPage transaction={transaction} />
-    )}
+    {page === 'success' && <SuccessPage transaction={transaction!} />}
   </div>
 ));
 
@@ -57,11 +55,11 @@ export default memo(() => {
     onSendSuccess: handleSendSuccess,
   });
 
-  if (!balances || isError) return null;
+  if (isError) return null;
   return (
     <Main
       page={page}
-      balances={balances}
+      balances={balances!}
       transaction={transaction}
       onNext={handleNext}
       onSend={onSend}

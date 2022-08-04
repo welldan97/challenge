@@ -15,7 +15,9 @@ export default function handler(
     res.status(400).json({ status: 'error' });
     return;
   }
+
   res.status(200).json({
     status: 'success',
+    transaction: req.body,
   });
 }

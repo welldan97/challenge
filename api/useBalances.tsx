@@ -4,33 +4,36 @@ import { useMemo, useState } from 'react';
 import { Balance } from '../lib/Balance';
 import { Transaction } from '../lib/Transaction';
 
-// SECTION: Main
+// SECTION: Introduction
 
 const getBalances = async () => axios.get('/api/balances');
 
 const sendTransaction = async (transaction: Transaction) =>
   axios.post('/api/send', transaction);
 
-type UseBalances = ({
-  onSendSuccess,
-}: {
-  onSendSuccess: (transaction: Transaction) => void;
-}) => {
+interface UseBalancesArgs {
+  onSendSuccess?: (transaction: Transaction) => void;
+}
+
+type UseBalances = (useBalanceArgs: UseBalancesArgs) => {
   isError: boolean;
   transaction?: Transaction;
   balances?: Balance[];
   onSend: (transaction: Transaction) => void;
 };
 
-const useBalances: UseBalances = ({ onSendSuccess }) => {
+// !SECTION
+// SECTION: Main
+
+const useBalances: UseBalances = ({ onSendSuccess } = {}) => {
   const { data } = useQuery(['balances'], getBalances);
 
   const [transaction, setTransaction] = useState<Transaction>();
 
   const mutation = useMutation(sendTransaction, {
-    onSuccess: (_, nextTransaction) => {
+    onSuccess: ({ data: { transaction: nextTransaction } }) => {
       setTransaction(nextTransaction);
-      onSendSuccess(nextTransaction);
+      onSendSuccess?.(nextTransaction);
     },
   });
 

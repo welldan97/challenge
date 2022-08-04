@@ -1,23 +1,22 @@
-/* eslint-disable import/no-extraneous-dependencies, @typescript-eslint/no-empty-function, @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-import React from 'react';
-import { renderHook, act, waitFor } from '@testing-library/react';
+/* eslint-disable import/no-extraneous-dependencies */
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import MockAdapter from 'axios-mock-adapter';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import React, { FC, ReactNode } from 'react';
 import useBalances from './useBalances';
 
 // SECTION: Mocks
 
 const balances = { address: 'TEST_ADDRESS', value: 'TEST_VALUE' };
-const transaction = { from: 'TEST_FROM', to: 'TEST_TO', value: 'TEST_VALUE' };
+const transaction = { from: 'TEST_FROM', to: 'TEST_TO', amount: 'TEST_VALUE' };
 
 // !SECTION
 // SECTION: Main
 
 describe('useBalances', () => {
   let mock;
-  let wrapper;
+  let wrapper: FC;
 
   beforeEach(() => {
     mock = new MockAdapter(axios);
@@ -30,8 +29,9 @@ describe('useBalances', () => {
       success: true,
       value: transaction,
     });
+
     const queryClient = new QueryClient();
-    wrapper = function baseWrapper({ children }) {
+    wrapper = function baseWrapper({ children }: { children: ReactNode }) {
       return (
         <QueryClientProvider client={queryClient}>
           {children}
@@ -41,15 +41,9 @@ describe('useBalances', () => {
   });
 
   it('should return balances', async () => {
-    if (!wrapper) return;
-
-    const { result } = renderHook(
-      () =>
-        useBalances({
-          onSendSuccess: () => {},
-        }),
-      { wrapper },
-    );
+    const { result } = renderHook(() => useBalances(), {
+      wrapper: wrapper!,
+    });
 
     await waitFor(() => {
       expect(result.current.isError).toBe(false);

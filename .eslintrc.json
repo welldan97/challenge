@@ -23,6 +23,7 @@
     "import/no-unresolved": "off",
     "react/jsx-props-no-spreading": "off",
     "import/extensions": [2, "never"],
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }
