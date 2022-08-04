@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import useBalances from '../../api/useBalances';
 import type { Balance } from '../../lib/Balance';
@@ -44,18 +44,16 @@ const Main = memo(({ page, balances, transaction, onNext, onSend }: Props) => (
 
 export default memo(() => {
   const [page, setPage] = useState<Page>('balances');
-  const [transaction, setTransaction] = useState<Transaction>();
 
   const handleNext = useCallback(() => {
     setPage('send');
   }, []);
 
-  const handleSendSuccess = useCallback((nextTransaction: Transaction) => {
-    setTransaction(nextTransaction);
+  const handleSendSuccess = useCallback(() => {
     setPage('success');
   }, []);
 
-  const { isError, balances, onSend } = useBalances({
+  const { isError, balances, transaction, onSend } = useBalances({
     onSendSuccess: handleSendSuccess,
   });
 

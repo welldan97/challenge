@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { Balance } from '../../../lib/Balance';
 import { Address, Row, Symbol, Table, Value, ValueCell } from './styles';
 
@@ -8,7 +8,7 @@ interface BalanceProps {
   balance: Balance;
 }
 
-const Balance = memo(({ balance }: BalanceProps) => (
+const BalanceRow = memo(({ balance }: BalanceProps) => (
   <Row>
     <td>
       <Address>{balance.address}</Address>
@@ -31,7 +31,7 @@ const BalancesTable = memo(({ balances }: Props) => (
   <Table>
     <tbody>
       {balances.map(balance => (
-        <Balance key={balance.address} balance={balance} />
+        <BalanceRow key={balance.address} balance={balance} />
       ))}
     </tbody>
   </Table>

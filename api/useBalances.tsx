@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Balance } from '../lib/Balance';
 import { Transaction } from '../lib/Transaction';
+
+// SECTION: Main
 
 const getBalances = async () => axios.get('/api/balances');
 
@@ -15,6 +17,7 @@ type UseBalances = ({
   onSendSuccess: (transaction: Transaction) => void;
 }) => {
   isError: boolean;
+  transaction?: Transaction;
   balances?: Balance[];
   onSend: (transaction: Transaction) => void;
 };
@@ -22,9 +25,12 @@ type UseBalances = ({
 const useBalances: UseBalances = ({ onSendSuccess }) => {
   const { data } = useQuery(['balances'], getBalances);
 
+  const [transaction, setTransaction] = useState<Transaction>();
+
   const mutation = useMutation(sendTransaction, {
-    onSuccess: (_, transaction) => {
-      onSendSuccess(transaction);
+    onSuccess: (_, nextTransaction) => {
+      setTransaction(nextTransaction);
+      onSendSuccess(nextTransaction);
     },
   });
 
@@ -33,8 +39,13 @@ const useBalances: UseBalances = ({ onSendSuccess }) => {
 
     const balances = data.data.value as Balance[];
 
-    return { isError: mutation.isError, balances, onSend: mutation.mutate };
-  }, [data]);
+    return {
+      isError: mutation.isError,
+      balances,
+      transaction,
+      onSend: mutation.mutate,
+    };
+  }, [data, transaction]);
 };
 
 export default useBalances;

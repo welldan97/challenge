@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
-import { memo, useCallback, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import styled from 'styled-components';
+import { Transaction } from '../../../lib/Transaction';
 import Input from '../../lib/Input';
 import { Box, Button, Footer, Header } from '../styles';
-import { Transaction } from '../../../lib/Transaction';
 
 // SECTION: Styles
 

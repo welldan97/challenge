@@ -1,5 +1,5 @@
+import React, { memo } from 'react';
 import BaseImage, { ImageProps } from 'next/image';
-import { memo } from 'react';
 
 // SECTION: Main
 

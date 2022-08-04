@@ -20,7 +20,6 @@
   "rules": {
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
-    "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "react/jsx-props-no-spreading": "off",
     "import/extensions": [2, "never"],
