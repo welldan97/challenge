@@ -1,8 +1,9 @@
 import { Formik } from 'formik';
-import { memo, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import Input from '../../lib/Input';
 import { Box, Button, Footer, Header } from '../styles';
+import { Transaction } from '../../../lib/Transaction';
 
 // SECTION: Styles
 
@@ -15,11 +16,11 @@ const Form = styled.form`
 
 // SECTION: Main
 
-interface Props {
-  onSend?: () => void;
+interface SendProps {
+  onSend: () => void;
 }
 
-const SendPage = ({ onSend }: Props) => (
+const SendPage = ({ onSend }: SendProps) => (
   <Box isShrunk>
     <Header>Please fill the form to send Ethereum</Header>
     <Form onSubmit={onSend} id="transaction">
@@ -38,7 +39,11 @@ const SendPage = ({ onSend }: Props) => (
 // /SECTION
 // SECTION: Container
 
-export default memo(() => {
+interface Props {
+  onSend: (transaction: Transaction) => void;
+}
+
+export default memo(({ onSend }: Props) => {
   const transaction = useMemo(
     () => ({
       from: '',
@@ -49,11 +54,7 @@ export default memo(() => {
   );
 
   return (
-    <Formik
-      initialValues={transaction}
-      enableReinitialize
-      onSubmit={console.log}
-    >
+    <Formik initialValues={transaction} enableReinitialize onSubmit={onSend}>
       {({ handleSubmit }) => <SendPage onSend={handleSubmit} />}
     </Formik>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Transaction } from '../../../lib/Transaction';
 import Image from '../../lib/Image';
 import { Box, Header } from '../styles';
 
@@ -39,18 +40,21 @@ const Address = styled.div`
 
 // SECTION: Main
 
-const SuccessPage = () => (
+interface Props {
+  transaction: Transaction;
+}
+const SuccessPage = ({ transaction }: Props) => (
   <Box isShrunk>
     <Header>Transaction complete</Header>
     <Wrapper>
       <Success src="/Success.svg" alt="sucess" width="100" height="100" />
       <Label> You sent</Label>
-      <Amount>0.76849 ETH</Amount>
+      <Amount>{transaction.amount} ETH</Amount>
       <Hr />
       <Label>From</Label>
-      <Address>0xeb34a91523a687930f7244e76407952c5b239707</Address>
+      <Address>{transaction.from}</Address>
       <Label>To</Label>
-      <Address>0xeb34a91523a687930f7244e76407952c5b239707</Address>
+      <Address>{transaction.to}</Address>
     </Wrapper>
   </Box>
 );
