@@ -4,7 +4,7 @@ import type { Transaction } from '../../lib/Transaction';
 
 interface Data {
   status: 'success' | 'error';
-  transaction?: Transaction;
+  value?: Transaction;
 }
 
 export default function handler(
@@ -18,6 +18,6 @@ export default function handler(
 
   res.status(200).json({
     status: 'success',
-    transaction: req.body,
+    value: req.body,
   });
 }

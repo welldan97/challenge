@@ -15,7 +15,7 @@ interface UseBalancesArgs {
   onSendSuccess?: (transaction: Transaction) => void;
 }
 
-type UseBalances = (useBalanceArgs: UseBalancesArgs) => {
+type UseBalances = (useBalanceArgs?: UseBalancesArgs) => {
   isError: boolean;
   transaction?: Transaction;
   balances?: Balance[];
@@ -31,7 +31,7 @@ const useBalances: UseBalances = ({ onSendSuccess } = {}) => {
   const [transaction, setTransaction] = useState<Transaction>();
 
   const mutation = useMutation(sendTransaction, {
-    onSuccess: ({ data: { transaction: nextTransaction } }) => {
+    onSuccess: ({ data: { value: nextTransaction } }) => {
       setTransaction(nextTransaction);
       onSendSuccess?.(nextTransaction);
     },
