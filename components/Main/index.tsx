@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import useBalances from '../../api/useBalances';
 import type { Balance } from '../../lib/Balance';

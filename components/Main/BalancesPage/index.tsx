@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import BalancesTable from './BalancesTable';
 import { Box, Header, Footer, Button } from '../styles';
 import type { Balance } from '../../../lib/Balance';

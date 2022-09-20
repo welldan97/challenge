@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { Balance } from '../../../lib/Balance';
 import { Address, Row, Symbol, Table, Value, ValueCell } from './styles';
 

@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import styled from 'styled-components';
 import { Transaction } from '../../../lib/Transaction';
 import Input from '../../lib/Input';

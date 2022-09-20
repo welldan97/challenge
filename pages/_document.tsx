@@ -5,7 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
 // SECTION: Main
