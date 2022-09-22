@@ -10,13 +10,13 @@ interface Props {
   balances: Balance[];
 }
 
-const BalancePage = memo(({ onNext, balances }: Props) => (
+const BalancesPage = memo(({ onNext, balances }: Props) => (
   <Box>
     <Header>My Ethereum addresses</Header>
     <BalancesTable balances={balances} />
     <Footer>
       <span>Please copy the address from which you wish to send money.</span>
-      <Button type="button" autoFocus onClick={onNext}>
+      <Button type="button" autoFocus onClick={onNext} data-testid="next">
         Next
       </Button>
     </Footer>
@@ -25,4 +25,4 @@ const BalancePage = memo(({ onNext, balances }: Props) => (
 
 // /SECTION
 
-export default BalancePage;
+export default BalancesPage;

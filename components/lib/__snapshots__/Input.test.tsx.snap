@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input render 1`] = `
+<div>
+  <div
+    class="sc-6f71e095-0 zKiGe"
+  >
+    <label
+      class="sc-6f71e095-1 dpiAKW"
+      for="testName"
+    >
+      TEST_LABEL
+    </label>
+    <input
+      class="sc-6f71e095-2 mOreu"
+      data-testid="testName"
+      id="testName"
+      placeholder="TEST_PLACEHOLDER"
+      value="testValue"
+    />
+  </div>
+</div>
+`;

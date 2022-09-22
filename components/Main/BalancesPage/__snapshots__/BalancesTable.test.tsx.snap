@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BalancesTable render 1`] = `
+<div>
+  <table
+    class="sc-50244374-0 dsjiEy"
+  >
+    <tbody>
+      <tr
+        class="sc-50244374-1 cYIIdr"
+      >
+        <td>
+          <span
+            class="sc-50244374-2 bGcnud"
+          >
+            TEST_ADDRESS1
+          </span>
+        </td>
+        <td
+          class="sc-50244374-3 jGtUXk"
+        >
+          <span
+            class="sc-50244374-4 jMsZsK"
+          >
+            TEST_VALUE1
+          </span>
+          <span
+            class="sc-50244374-5 hbdULL"
+          >
+             ETH
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-50244374-1 cYIIdr"
+      >
+        <td>
+          <span
+            class="sc-50244374-2 bGcnud"
+          >
+            TEST_ADDRESS2
+          </span>
+        </td>
+        <td
+          class="sc-50244374-3 jGtUXk"
+        >
+          <span
+            class="sc-50244374-4 jMsZsK"
+          >
+            TEST_VALUE2
+          </span>
+          <span
+            class="sc-50244374-5 hbdULL"
+          >
+             ETH
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-50244374-1 cYIIdr"
+      >
+        <td>
+          <span
+            class="sc-50244374-2 bGcnud"
+          >
+            TEST_ADDRESS3
+          </span>
+        </td>
+        <td
+          class="sc-50244374-3 jGtUXk"
+        >
+          <span
+            class="sc-50244374-4 jMsZsK"
+          >
+            TEST_VALUE3
+          </span>
+          <span
+            class="sc-50244374-5 hbdULL"
+          >
+             ETH
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

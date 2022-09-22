@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BalancesPage render 1`] = `
+<div>
+  <div
+    class="sc-da1060d0-0 fFYZiQ"
+  >
+    <header
+      class="sc-da1060d0-1 eHCwEr"
+    >
+      My Ethereum addresses
+    </header>
+    <table
+      class="sc-50244374-0 dsjiEy"
+    >
+      <tbody>
+        <tr
+          class="sc-50244374-1 cYIIdr"
+        >
+          <td>
+            <span
+              class="sc-50244374-2 bGcnud"
+            >
+              TEST_ADDRESS1
+            </span>
+          </td>
+          <td
+            class="sc-50244374-3 jGtUXk"
+          >
+            <span
+              class="sc-50244374-4 jMsZsK"
+            >
+              TEST_VALUE1
+            </span>
+            <span
+              class="sc-50244374-5 hbdULL"
+            >
+               ETH
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="sc-50244374-1 cYIIdr"
+        >
+          <td>
+            <span
+              class="sc-50244374-2 bGcnud"
+            >
+              TEST_ADDRESS2
+            </span>
+          </td>
+          <td
+            class="sc-50244374-3 jGtUXk"
+          >
+            <span
+              class="sc-50244374-4 jMsZsK"
+            >
+              TEST_VALUE2
+            </span>
+            <span
+              class="sc-50244374-5 hbdULL"
+            >
+               ETH
+            </span>
+          </td>
+        </tr>
+        <tr
+          class="sc-50244374-1 cYIIdr"
+        >
+          <td>
+            <span
+              class="sc-50244374-2 bGcnud"
+            >
+              TEST_ADDRESS3
+            </span>
+          </td>
+          <td
+            class="sc-50244374-3 jGtUXk"
+          >
+            <span
+              class="sc-50244374-4 jMsZsK"
+            >
+              TEST_VALUE3
+            </span>
+            <span
+              class="sc-50244374-5 hbdULL"
+            >
+               ETH
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <footer
+      class="sc-da1060d0-2 cunNGN"
+    >
+      <span>
+        Please copy the address from which you wish to send money.
+      </span>
+      <button
+        class="sc-da1060d0-3 fUffHN"
+        data-testid="next"
+        type="button"
+      >
+        Next
+      </button>
+    </footer>
+  </div>
+</div>
+`;

@@ -4,11 +4,11 @@ import { Address, Row, Symbol, Table, Value, ValueCell } from './styles';
 
 // SECTION: Subcomponents
 
-interface BalanceProps {
+interface BalanceRowProps {
   balance: Balance;
 }
 
-const BalanceRow = memo(({ balance }: BalanceProps) => (
+const BalanceRow = memo(({ balance }: BalanceRowProps) => (
   <Row>
     <td>
       <Address>{balance.address}</Address>

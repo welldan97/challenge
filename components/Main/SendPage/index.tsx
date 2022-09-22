@@ -13,7 +13,6 @@ const Form = styled.form`
 `;
 
 // !SECTION
-
 // SECTION: Main
 
 interface SendProps {
@@ -24,12 +23,12 @@ const SendPage = ({ onSend }: SendProps) => (
   <Box isShrunk>
     <Header>Please fill the form to send Ethereum</Header>
     <Form onSubmit={onSend} id="transaction">
-      <Input name="from" placeholder="Your address" label="From" />
+      <Input name="from" placeholder="Your address" label="From" autoFocus />
       <Input name="to" placeholder="Destination address" label="To" />
       <Input name="amount" placeholder="Ethereum amount" label="Amount" />
     </Form>
     <Footer isSeamless>
-      <Button type="submit" autoFocus onClick={onSend} form="transaction">
+      <Button type="submit" form="transaction" data-testid="send">
         Send
       </Button>
     </Footer>

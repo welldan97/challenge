@@ -1,5 +1,5 @@
 import { useField } from 'formik';
-import { memo } from 'react';
+import { InputHTMLAttributes, memo } from 'react';
 import styled from 'styled-components';
 
 // SECTION: Styles
@@ -28,13 +28,15 @@ const BaseInput = styled.input`
 // !SECTION
 // SECTION: Main
 
-interface Props {
+type InputProps = InputHTMLAttributes<HTMLInputElement>;
+
+interface Props extends InputProps {
   name: string;
   placeholder: string;
   label: string;
 }
 
-const Input = memo(({ name, label, placeholder }: Props) => {
+const Input = memo(({ name, label, placeholder, ...rest }: Props) => {
   const [field] = useField({
     name,
   });
@@ -45,9 +47,11 @@ const Input = memo(({ name, label, placeholder }: Props) => {
       <BaseInput
         value={field.value}
         id={name}
+        data-testid={name}
         placeholder={placeholder}
         onChange={field.onChange}
         onBlur={field.onBlur}
+        {...rest}
       />
     </Wrapper>
   );

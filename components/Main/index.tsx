@@ -4,7 +4,7 @@ import useBalances from '../../api/useBalances';
 import type { Balance } from '../../lib/Balance';
 import { Transaction } from '../../lib/Transaction';
 import Image from '../lib/Image';
-import BalancePage from './BalancesPage';
+import BalancesPage from './BalancesPage';
 import SendPage from './SendPage';
 import SuccessPage from './SuccessPage';
 
@@ -29,9 +29,11 @@ interface Props {
 }
 
 const Main = memo(({ page, balances, transaction, onNext, onSend }: Props) => (
-  <div>
+  <div data-testid="wrapper">
     <Logo src="/Logo.svg" alt="Utrust" width="120" height="28" />
-    {page === 'balances' && <BalancePage onNext={onNext} balances={balances} />}
+    {page === 'balances' && (
+      <BalancesPage onNext={onNext} balances={balances} />
+    )}
     {page === 'send' && <SendPage onSend={onSend} />}
     {page === 'success' && <SuccessPage transaction={transaction!} />}
   </div>

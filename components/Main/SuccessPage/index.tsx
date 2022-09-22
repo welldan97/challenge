@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import styled from 'styled-components';
 import { Transaction } from '../../../lib/Transaction';
 import Image from '../../lib/Image';
@@ -44,11 +44,12 @@ const Address = styled.div`
 interface Props {
   transaction: Transaction;
 }
+
 const SuccessPage = ({ transaction }: Props) => (
   <Box isShrunk>
     <Header>Transaction complete</Header>
     <Wrapper>
-      <Success src="/Success.svg" alt="sucess" width="100" height="100" />
+      <Success src="/Success.svg" alt="success" width="100" height="100" />
       <Label> You sent</Label>
       <Amount>{transaction.amount} ETH</Amount>
       <Hr />
@@ -63,4 +64,4 @@ const SuccessPage = ({ transaction }: Props) => (
 // /SECTION
 // SECTION: Container
 
-export default SuccessPage;
+export default memo(SuccessPage);
