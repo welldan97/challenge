@@ -9,12 +9,15 @@ interface Args {
   data?: unknown;
 }
 
+let host = '';
+if (typeof window === 'undefined') host = 'http://localhost:3000';
+
 const baseRequest = async <T,>(
   { method, path, data }: Args,
   options: AxiosRequestConfig,
 ) => {
   const result = await axios.request<Response<T>>({
-    url: `http://localhost:3000/api/${path}`,
+    url: `${host}/api/${path}`,
     method,
     data,
     ...options,

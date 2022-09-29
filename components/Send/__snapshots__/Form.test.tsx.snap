@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form render 1`] = `
+<div>
+  <header
+    class="sc-4d880b92-2 jLouef"
+  >
+    Please fill the form to send Ethereum
+  </header>
+  <form
+    class="sc-82e58d5d-0 geSGCZ"
+    id="transaction"
+  >
+    <div
+      class="sc-2d2a1aa8-0 cxcNIV"
+    >
+      <label
+        class="sc-2d2a1aa8-1 haCvit"
+        for="from"
+      >
+        From
+      </label>
+      <input
+        class="sc-2d2a1aa8-2 eQinJl"
+        data-testid="from"
+        id="from"
+        placeholder="Your address"
+        value="TEST_FROM"
+      />
+    </div>
+    <div
+      class="sc-2d2a1aa8-0 cxcNIV"
+    >
+      <label
+        class="sc-2d2a1aa8-1 haCvit"
+        for="to"
+      >
+        To
+      </label>
+      <input
+        class="sc-2d2a1aa8-2 eQinJl"
+        data-testid="to"
+        id="to"
+        placeholder="Destination address"
+        value="TEST_TO"
+      />
+    </div>
+    <div
+      class="sc-2d2a1aa8-0 cxcNIV"
+    >
+      <label
+        class="sc-2d2a1aa8-1 haCvit"
+        for="amount"
+      >
+        Amount
+      </label>
+      <input
+        class="sc-2d2a1aa8-2 eQinJl"
+        data-testid="amount"
+        id="amount"
+        placeholder="Ethereum amount"
+        value="TEST_VALUE"
+      />
+    </div>
+  </form>
+  <footer
+    class="sc-4d880b92-3 gunIol"
+  >
+    <button
+      class="sc-4d880b92-4 hRpFqd"
+      data-testid="send"
+      form="transaction"
+      type="submit"
+    >
+      Send
+    </button>
+  </footer>
+</div>
+`;

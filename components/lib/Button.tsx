@@ -41,7 +41,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   type?: ComponentPropsWithoutRef<'button'>['type'];
 }
 
-interface AnchorProps extends ComponentPropsWithoutRef<typeof Link> {
+interface AnchorProps extends ComponentPropsWithoutRef<'a'> {
   type: 'anchor';
 }
 
@@ -49,8 +49,8 @@ const Button = memo((props: ButtonProps | AnchorProps = { type: 'button' }) => {
   if (props.type === 'anchor') {
     const passedHref = typeof props.href === 'string' ? props.href : '';
     return (
-      <Link {...omit(['type', 'as', 'children'], props)}>
-        <StyledAnchor href={passedHref}>{props.children}</StyledAnchor>
+      <Link href={passedHref}>
+        <StyledAnchor {...omit(['type'], props)} />
       </Link>
     );
   }

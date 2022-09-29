@@ -1,43 +1,42 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import BalancesPage from '.';
+import { render, waitFor, screen } from '@testing-library/react';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+
+import Balances from '.';
+import Wrapper from '../../lib/test/Wrapper';
+import balances from '../../lib/test/fixtures/balances';
+import { Response } from '../../lib/Response';
+import { Balance } from '../../lib/Balance';
 
 // SECTION: Main
 
-describe('BalancesPage', () => {
-  const balances = [
-    {
-      address: 'TEST_ADDRESS1',
-      value: 'TEST_VALUE1',
-    },
-    {
-      address: 'TEST_ADDRESS2',
-      value: 'TEST_VALUE2',
-    },
-    {
-      address: 'TEST_ADDRESS3',
-      value: 'TEST_VALUE3',
-    },
-  ];
+describe('Balances', () => {
+  let mock: MockAdapter;
 
-  test('render', () => {
-    const onNext = () => {};
+  beforeEach(() => {
+    mock = new MockAdapter(axios);
 
-    const { container } = render(
-      <BalancesPage onNext={onNext} balances={balances} />,
-    );
-
-    expect(container).toMatchSnapshot();
+    mock.onGet('/api/balances').reply(200, {
+      status: 'success',
+      value: balances,
+    } as Response<Balance[]>);
   });
 
-  test('next', async () => {
-    const onNext = jest.fn();
+  afterEach(() => {
+    mock.reset();
+  });
 
-    render(<BalancesPage onNext={onNext} balances={balances} />);
+  test('render', async () => {
+    const { container } = render(
+      <Wrapper>
+        <Balances />
+      </Wrapper>,
+    );
 
-    const nextButton = screen.getByTestId('next');
-    await userEvent.click(nextButton);
+    await waitFor(() => {
+      expect(screen.getByTestId('wrapper')).toBeTruthy();
+    });
 
-    expect(onNext).toBeCalled();
+    expect(container).toMatchSnapshot();
   });
 });

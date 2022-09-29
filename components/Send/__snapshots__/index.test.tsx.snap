@@ -1,17 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendPage render 1`] = `
+exports[`Send render 1`] = `
 <div>
   <div
-    class="sc-da1060d0-0 dVsQgh"
+    class="sc-4d880b92-0 fwseqv"
+  >
+    <span
+      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+    >
+      <span
+        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+      >
+        <img
+          alt=""
+          aria-hidden="true"
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27120%27%20height=%2728%27/%3e"
+          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+        />
+      </span>
+      <img
+        alt="Utrust"
+        data-nimg="intrinsic"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+      />
+      <noscript />
+    </span>
+  </div>
+  <div
+    class="sc-4d880b92-1 cCwZCH"
   >
     <header
-      class="sc-da1060d0-1 eHCwEr"
+      class="sc-4d880b92-2 jLouef"
     >
       Please fill the form to send Ethereum
     </header>
     <form
-      class="sc-b81309d0-0 ePlrqb"
+      class="sc-82e58d5d-0 geSGCZ"
       id="transaction"
     >
       <div
@@ -67,10 +93,10 @@ exports[`SendPage render 1`] = `
       </div>
     </form>
     <footer
-      class="sc-da1060d0-2 MrGpr"
+      class="sc-4d880b92-3 gunIol"
     >
       <button
-        class="sc-da1060d0-3 fUffHN"
+        class="sc-4d880b92-4 hRpFqd"
         data-testid="send"
         form="transaction"
         type="submit"
@@ -78,6 +104,112 @@ exports[`SendPage render 1`] = `
         Send
       </button>
     </footer>
+  </div>
+</div>
+`;
+
+exports[`Send send 1`] = `
+<div>
+  <div
+    class="sc-4d880b92-0 fwseqv"
+  >
+    <span
+      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+    >
+      <span
+        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+      >
+        <img
+          alt=""
+          aria-hidden="true"
+          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27120%27%20height=%2728%27/%3e"
+          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+        />
+      </span>
+      <img
+        alt="Utrust"
+        data-nimg="intrinsic"
+        decoding="async"
+        src="/Logo.svg"
+        srcset="/Logo.svg 1x, /Logo.svg 2x"
+        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+      />
+      <noscript />
+    </span>
+  </div>
+  <div
+    class="sc-4d880b92-1 cCwZCH"
+  >
+    <header
+      class="sc-4d880b92-2 jLouef"
+    >
+      Transaction complete
+    </header>
+    <div
+      class="sc-ee4a49c1-1 kgemLy"
+      data-testid="success"
+    >
+      <div
+        class="sc-ee4a49c1-0 eesvOD"
+      >
+        <span
+          style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+        >
+          <span
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27100%27%20height=%27100%27/%3e"
+              style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+            />
+          </span>
+          <img
+            alt="success"
+            data-nimg="intrinsic"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          />
+          <noscript />
+        </span>
+      </div>
+      <div
+        class="sc-ee4a49c1-2 iaHgWB"
+      >
+         You sent
+      </div>
+      <div
+        class="sc-ee4a49c1-3 ghsTBT"
+      >
+        TEST_VALUE
+         ETH
+      </div>
+      <hr
+        class="sc-ee4a49c1-4 inTHIh"
+      />
+      <div
+        class="sc-ee4a49c1-2 iaHgWB"
+      >
+        From
+      </div>
+      <div
+        class="sc-ee4a49c1-5 ePoTdn"
+      >
+        TEST_FROM
+      </div>
+      <div
+        class="sc-ee4a49c1-2 iaHgWB"
+      >
+        To
+      </div>
+      <div
+        class="sc-ee4a49c1-5 ePoTdn"
+      >
+        TEST_TO
+      </div>
+    </div>
   </div>
 </div>
 `;

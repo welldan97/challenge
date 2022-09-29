@@ -7,8 +7,6 @@ import { Logo, Box } from '../styles';
 import Form from './Form';
 import Success from './Success';
 
-// SECTION: Styles
-
 // SECTION: Main
 
 interface Props {

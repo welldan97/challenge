@@ -1,20 +1,47 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
-import SendPage from '.';
+import Send from '.';
+import { Response } from '../../lib/Response';
+import transaction from '../../lib/test/fixtures/transaction';
+import Wrapper from '../../lib/test/Wrapper';
+import { Transaction } from '../../lib/Transaction';
 
 // SECTION: Main
 
-describe('SendPage', () => {
+describe('Send', () => {
+  let mock: MockAdapter;
+
+  beforeEach(() => {
+    mock = new MockAdapter(axios);
+
+    mock.onPost('/api/transactions').reply(200, {
+      status: 'success',
+      value: transaction,
+    } as Response<Transaction>);
+  });
+
+  afterEach(() => {
+    mock.reset();
+  });
+
   test('render', () => {
-    const onSend = () => {};
-    const { container } = render(<SendPage onSend={onSend} />);
+    const { container } = render(
+      <Wrapper>
+        <Send />
+      </Wrapper>,
+    );
     expect(container).toMatchSnapshot();
   });
 
   test('send', async () => {
-    const onSend = jest.fn();
-    render(<SendPage onSend={onSend} />);
+    const { container } = render(
+      <Wrapper>
+        <Send />
+      </Wrapper>,
+    );
 
     const from = screen.getByTestId('from');
     await userEvent.type(from, 'TEST_FROM');
@@ -29,10 +56,9 @@ describe('SendPage', () => {
 
     await userEvent.click(send);
 
-    expect(onSend.mock.calls[0][0]).toEqual({
-      from: 'TEST_FROM',
-      to: 'TEST_TO',
-      amount: 'TEST_AMOUNT',
+    await waitFor(() => {
+      expect(screen.getByTestId('success')).toBeTruthy();
     });
+    expect(container).toMatchSnapshot();
   });
 });

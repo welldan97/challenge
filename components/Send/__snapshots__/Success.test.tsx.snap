@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessPage render 1`] = `
+<div>
+  <header
+    class="sc-4d880b92-2 jLouef"
+  >
+    Transaction complete
+  </header>
+  <div
+    class="sc-ee4a49c1-1 kgemLy"
+    data-testid="success"
+  >
+    <div
+      class="sc-ee4a49c1-0 eesvOD"
+    >
+      <span
+        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+      >
+        <span
+          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27100%27%20height=%27100%27/%3e"
+            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+          />
+        </span>
+        <img
+          alt="success"
+          data-nimg="intrinsic"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+        <noscript />
+      </span>
+    </div>
+    <div
+      class="sc-ee4a49c1-2 iaHgWB"
+    >
+       You sent
+    </div>
+    <div
+      class="sc-ee4a49c1-3 ghsTBT"
+    >
+      77777
+       ETH
+    </div>
+    <hr
+      class="sc-ee4a49c1-4 inTHIh"
+    />
+    <div
+      class="sc-ee4a49c1-2 iaHgWB"
+    >
+      From
+    </div>
+    <div
+      class="sc-ee4a49c1-5 ePoTdn"
+    >
+      TEST_FROM
+    </div>
+    <div
+      class="sc-ee4a49c1-2 iaHgWB"
+    >
+      To
+    </div>
+    <div
+      class="sc-ee4a49c1-5 ePoTdn"
+    >
+      TEST_TO
+    </div>
+  </div>
+</div>
+`;

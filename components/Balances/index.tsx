@@ -15,7 +15,7 @@ interface Props {
 const Balances = memo(({ balances }: Props) => (
   <>
     <Logo src="/Logo.svg" alt="Utrust" width="120" height="28" />
-    <Box>
+    <Box data-testid="wrapper">
       <Header>My Ethereum addresses</Header>
       <BalancesTable balances={balances} />
       <Footer>
@@ -31,11 +31,15 @@ const Balances = memo(({ balances }: Props) => (
 // !SECTION
 // SECTION Container
 
-export default memo(({ balances: initialBalances }: Props) => {
+interface ContainerProps {
+  balances?: Balance[];
+}
+
+export default memo(({ balances: initialBalances }: ContainerProps) => {
   const { data: balances, isSuccess } = useQuery(
     ['balance', 'getAll'],
     balanceApi.getAll,
-    { initialData: initialBalances, staleTime: 1000 },
+    initialBalances && { initialData: initialBalances, staleTime: 1000 },
   );
   if (!isSuccess) return null;
 
