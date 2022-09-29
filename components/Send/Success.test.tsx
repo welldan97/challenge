@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import SuccessPage from '.';
+import SuccessPage from './Success';
 
 // SECTION: Main
 

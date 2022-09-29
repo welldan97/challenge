@@ -15,16 +15,16 @@ exports[`SendPage render 1`] = `
       id="transaction"
     >
       <div
-        class="sc-6f71e095-0 zKiGe"
+        class="sc-2d2a1aa8-0 cxcNIV"
       >
         <label
-          class="sc-6f71e095-1 dpiAKW"
+          class="sc-2d2a1aa8-1 haCvit"
           for="from"
         >
           From
         </label>
         <input
-          class="sc-6f71e095-2 mOreu"
+          class="sc-2d2a1aa8-2 eQinJl"
           data-testid="from"
           id="from"
           placeholder="Your address"
@@ -32,16 +32,16 @@ exports[`SendPage render 1`] = `
         />
       </div>
       <div
-        class="sc-6f71e095-0 zKiGe"
+        class="sc-2d2a1aa8-0 cxcNIV"
       >
         <label
-          class="sc-6f71e095-1 dpiAKW"
+          class="sc-2d2a1aa8-1 haCvit"
           for="to"
         >
           To
         </label>
         <input
-          class="sc-6f71e095-2 mOreu"
+          class="sc-2d2a1aa8-2 eQinJl"
           data-testid="to"
           id="to"
           placeholder="Destination address"
@@ -49,16 +49,16 @@ exports[`SendPage render 1`] = `
         />
       </div>
       <div
-        class="sc-6f71e095-0 zKiGe"
+        class="sc-2d2a1aa8-0 cxcNIV"
       >
         <label
-          class="sc-6f71e095-1 dpiAKW"
+          class="sc-2d2a1aa8-1 haCvit"
           for="amount"
         >
           Amount
         </label>
         <input
-          class="sc-6f71e095-2 mOreu"
+          class="sc-2d2a1aa8-2 eQinJl"
           data-testid="amount"
           id="amount"
           placeholder="Ethereum amount"

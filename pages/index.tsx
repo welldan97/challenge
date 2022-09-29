@@ -1,8 +1,22 @@
 import type { NextPage } from 'next';
-import Main from '../components/Main';
+import balanceApi from '../api/balanceApi';
+import Balances from '../components/Balances';
+import { Balance } from '../lib/Balance';
 
 // SECTION: Main
 
-const MainPage: NextPage = () => <Main />;
+interface Props {
+  balances: Balance[];
+}
 
-export default MainPage;
+const BalancesPage: NextPage<Props> = ({ balances }: Props) => (
+  <Balances balances={balances} />
+);
+
+export async function getServerSideProps() {
+  const balances = await balanceApi.getAll();
+
+  return { props: { balances } };
+}
+
+export default BalancesPage;

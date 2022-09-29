@@ -1,5 +1,5 @@
 import { useField } from 'formik';
-import { InputHTMLAttributes, memo } from 'react';
+import { ComponentPropsWithoutRef, HTMLAttributes, memo } from 'react';
 import styled from 'styled-components';
 
 // SECTION: Styles
@@ -28,9 +28,7 @@ const BaseInput = styled.input`
 // !SECTION
 // SECTION: Main
 
-type InputProps = InputHTMLAttributes<HTMLInputElement>;
-
-interface Props extends InputProps {
+interface Props extends ComponentPropsWithoutRef<'input'> {
   name: string;
   placeholder: string;
   label: string;

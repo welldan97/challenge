@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
-import { Transaction } from '../../../lib/Transaction';
-import Image from '../../lib/Image';
+import { Transaction } from '../../lib/Transaction';
+import Image from '../lib/Image';
 import { Box, Header } from '../styles';
 
 // SECTION: Styles
@@ -45,7 +45,7 @@ interface Props {
   transaction: Transaction;
 }
 
-const SuccessPage = ({ transaction }: Props) => (
+const SuccessPage = memo(({ transaction }: Props) => (
   <Box isShrunk>
     <Header>Transaction complete</Header>
     <Wrapper>
@@ -59,9 +59,9 @@ const SuccessPage = ({ transaction }: Props) => (
       <Address>{transaction.to}</Address>
     </Wrapper>
   </Box>
-);
+));
 
 // /SECTION
 // SECTION: Container
 
-export default memo(SuccessPage);
+export default SuccessPage;

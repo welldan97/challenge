@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Balance } from '../../../lib/Balance';
+import { Balance } from '../../lib/Balance';
 import { Address, Row, Symbol, Table, Value, ValueCell } from './styles';
 
 // SECTION: Subcomponents

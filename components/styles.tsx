@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import Image from './lib/Image';
 
 // SECTION: Main
+
+export const Logo = styled(Image)`
+  margin-bottom: 21px;
+  margin-left: 25px;
+`;
 
 export const Box = styled.div`
   display: flex;
