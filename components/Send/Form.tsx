@@ -1,16 +1,9 @@
 import { memo } from 'react';
-import styled from 'styled-components';
+
 import Input from '../lib/Input';
 import { Button, Footer, Header } from '../styles';
+import { Form } from './styles';
 
-// SECTION: Styles
-
-const Form = styled.form`
-  margin-top: 29px;
-  margin-bottom: 7px;
-`;
-
-// !SECTION
 // SECTION: Main
 
 interface Props {

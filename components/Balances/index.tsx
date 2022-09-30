@@ -3,7 +3,8 @@ import { memo } from 'react';
 import balanceApi from '../../api/balanceApi';
 import { Balance } from '../../lib/Balance';
 import Button from '../lib/Button';
-import { Box, Footer, Header, Logo } from '../styles';
+import Layout from '../lib/Layout';
+import { Footer, Header } from '../styles';
 import BalancesTable from './BalancesTable';
 
 // SECTION: Main
@@ -13,19 +14,16 @@ interface Props {
 }
 
 const Balances = memo(({ balances }: Props) => (
-  <>
-    <Logo src="/Logo.svg" alt="Utrust" width="120" height="28" />
-    <Box data-testid="wrapper">
-      <Header>My Ethereum addresses</Header>
-      <BalancesTable balances={balances} />
-      <Footer>
-        <span>Please copy the address from which you wish to send money.</span>
-        <Button type="anchor" data-testid="next" href="/send">
-          Next
-        </Button>
-      </Footer>
-    </Box>
-  </>
+  <Layout>
+    <Header>My Ethereum addresses</Header>
+    <BalancesTable balances={balances} />
+    <Footer>
+      <span>Please copy the address from which you wish to send money.</span>
+      <Button type="anchor" data-testid="next" href="/send">
+        Next
+      </Button>
+    </Footer>
+  </Layout>
 ));
 
 // !SECTION
@@ -36,12 +34,11 @@ interface ContainerProps {
 }
 
 export default memo(({ balances: initialBalances }: ContainerProps) => {
-  const { data: balances, isSuccess } = useQuery(
+  const { data: balances } = useQuery(
     ['balance', 'getAll'],
     balanceApi.getAll,
     initialBalances && { initialData: initialBalances, staleTime: 1000 },
   );
-  if (!isSuccess) return null;
 
   return <Balances balances={balances} />;
 });

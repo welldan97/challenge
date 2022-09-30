@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render as anchor 1`] = `
+<div>
+  <a
+    class="sc-9b79432-1 fFRuBw"
+    href="/"
+  >
+    test
+  </a>
+</div>
+`;
+
+exports[`Button render as button 1`] = `
+<div>
+  <button
+    class="sc-9b79432-0 hZUqsl"
+  >
+    test
+  </button>
+</div>
+`;

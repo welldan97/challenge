@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import balanceApi from '../api/balanceApi';
 import Balances from '../components/Balances';
 import { Balance } from '../lib/Balance';

@@ -125,7 +125,7 @@ exports[`Balances render 1`] = `
         Please copy the address from which you wish to send money.
       </span>
       <a
-        class="sc-23316aab-1 dzqFtz"
+        class="sc-9b79432-1 fFRuBw"
         data-testid="next"
         href="/send"
       >

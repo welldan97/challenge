@@ -1,3 +1,7 @@
+import { Balance } from '../../Balance';
+
+// SECTION: Main
+
 export default [
   {
     address: 'TEST_ADDRESS1',
@@ -11,4 +15,4 @@ export default [
     address: 'TEST_ADDRESS3',
     value: 'TEST_VALUE3',
   },
-];
+] as Balance[];

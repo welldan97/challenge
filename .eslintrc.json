@@ -43,6 +43,7 @@
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/no-empty-function": "off",
     "react/state-in-constructor": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/extensions": "off"
   }
 }

@@ -8,11 +8,11 @@ exports[`SuccessPage render 1`] = `
     Transaction complete
   </header>
   <div
-    class="sc-ee4a49c1-1 kgemLy"
+    class="sc-534f3407-1 cabieY"
     data-testid="success"
   >
     <div
-      class="sc-ee4a49c1-0 eesvOD"
+      class="sc-534f3407-0 gksomd"
     >
       <span
         style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -38,36 +38,36 @@ exports[`SuccessPage render 1`] = `
       </span>
     </div>
     <div
-      class="sc-ee4a49c1-2 iaHgWB"
+      class="sc-534f3407-2 gTneqL"
     >
        You sent
     </div>
     <div
-      class="sc-ee4a49c1-3 ghsTBT"
+      class="sc-534f3407-3 feBzYV"
     >
-      77777
+      TEST_AMOUNT
        ETH
     </div>
     <hr
-      class="sc-ee4a49c1-4 inTHIh"
+      class="sc-534f3407-4 gWNUMj"
     />
     <div
-      class="sc-ee4a49c1-2 iaHgWB"
+      class="sc-534f3407-2 gTneqL"
     >
       From
     </div>
     <div
-      class="sc-ee4a49c1-5 ePoTdn"
+      class="sc-534f3407-5 hezqVB"
     >
       TEST_FROM
     </div>
     <div
-      class="sc-ee4a49c1-2 iaHgWB"
+      class="sc-534f3407-2 gTneqL"
     >
       To
     </div>
     <div
-      class="sc-ee4a49c1-5 ePoTdn"
+      class="sc-534f3407-5 hezqVB"
     >
       TEST_TO
     </div>

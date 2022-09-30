@@ -3,10 +3,10 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 import Balances from '.';
-import Wrapper from '../../lib/test/Wrapper';
 import balances from '../../lib/test/fixtures/balances';
 import { Response } from '../../lib/Response';
 import { Balance } from '../../lib/Balance';
+import AppWrapper from '../lib/AppWrapper';
 
 // SECTION: Main
 
@@ -28,9 +28,9 @@ describe('Balances', () => {
 
   test('render', async () => {
     const { container } = render(
-      <Wrapper>
+      <AppWrapper>
         <Balances />
-      </Wrapper>,
+      </AppWrapper>,
     );
 
     await waitFor(() => {

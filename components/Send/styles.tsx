@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import Image from '../lib/Image';
 
 // SECTION: Main
@@ -33,4 +34,9 @@ export const Hr = styled.hr`
 export const Address = styled.div`
   transform: translateY(1px);
   margin-bottom: 14px;
+`;
+
+export const Form = styled.form`
+  margin-top: 29px;
+  margin-bottom: 7px;
 `;

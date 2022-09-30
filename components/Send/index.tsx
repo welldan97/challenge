@@ -1,9 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
 import { Formik } from 'formik';
 import { memo, useCallback, useMemo } from 'react';
+
 import transactionApi from '../../api/transactionApi';
 import { Transaction } from '../../lib/Transaction';
-import { Logo, Box } from '../styles';
+import Layout from '../lib/Layout';
 import Form from './Form';
 import Success from './Success';
 
@@ -15,16 +16,13 @@ interface Props {
 }
 
 const Send = ({ onSend, transaction }: Props) => (
-  <>
-    <Logo src="/Logo.svg" alt="Utrust" width="120" height="28" />
-    <Box isShrunk>
-      {transaction ? (
-        <Success transaction={transaction} />
-      ) : (
-        <Form onSend={onSend} />
-      )}
-    </Box>
-  </>
+  <Layout isShrunk>
+    {transaction ? (
+      <Success transaction={transaction} />
+    ) : (
+      <Form onSend={onSend} />
+    )}
+  </Layout>
 );
 
 // /SECTION

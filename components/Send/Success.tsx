@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { Transaction } from '../../lib/Transaction';
 import { Header } from '../styles';
 import { Address, Amount, Hr, Label, Success, Wrapper } from './styles';

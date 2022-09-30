@@ -6,7 +6,7 @@ import MockAdapter from 'axios-mock-adapter';
 import Send from '.';
 import { Response } from '../../lib/Response';
 import transaction from '../../lib/test/fixtures/transaction';
-import Wrapper from '../../lib/test/Wrapper';
+import AppWrapper from '../lib/AppWrapper';
 import { Transaction } from '../../lib/Transaction';
 
 // SECTION: Main
@@ -29,18 +29,18 @@ describe('Send', () => {
 
   test('render', () => {
     const { container } = render(
-      <Wrapper>
+      <AppWrapper>
         <Send />
-      </Wrapper>,
+      </AppWrapper>,
     );
     expect(container).toMatchSnapshot();
   });
 
   test('send', async () => {
     const { container } = render(
-      <Wrapper>
+      <AppWrapper>
         <Send />
-      </Wrapper>,
+      </AppWrapper>,
     );
 
     const from = screen.getByTestId('from');

@@ -2,17 +2,22 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Formik } from 'formik';
 
-import transaction from '../../lib/test/fixtures/transaction';
 import Form from './Form';
 
 // SECTION: Main
 
 describe('Form', () => {
+  const initialValues = {
+    amount: '',
+    from: '',
+    to: '',
+  };
+
   test('render', () => {
     const onSubmit = () => {};
     const { container } = render(
       <Formik
-        initialValues={transaction}
+        initialValues={initialValues}
         enableReinitialize
         onSubmit={onSubmit}
       >
@@ -26,7 +31,7 @@ describe('Form', () => {
     const onSubmit = jest.fn();
     render(
       <Formik
-        initialValues={transaction}
+        initialValues={initialValues}
         enableReinitialize
         onSubmit={onSubmit}
       >
@@ -47,9 +52,9 @@ describe('Form', () => {
     await userEvent.click(send);
 
     expect(onSubmit.mock.calls[0][0]).toEqual({
-      amount: 'TEST_VALUETEST_AMOUNT',
-      from: 'TEST_FROMTEST_FROM',
-      to: 'TEST_TOTEST_TO',
+      amount: 'TEST_AMOUNT',
+      from: 'TEST_FROM',
+      to: 'TEST_TO',
     });
   });
 });
